@@ -479,7 +479,6 @@ p {
   flex-shrink: 0;
 }
 
-
 /* =========================================
    EXPERIENCE PAGE
 ========================================= */
@@ -1227,25 +1226,29 @@ p {
   }
 
   .experience-photo {
-    width: 105px;
-    height: 135px;
-    padding: 5px;
+    width: 70px;
+    height: 90px;
+    padding: 4px;
   }
 
   .experience-photo-1 {
-    left: 2%;
+    top: 0;
+    left: 0;
   }
 
   .experience-photo-2 {
-    left: 20%;
+    top: 18px;
+    left: 18px;
   }
 
   .experience-photo-3 {
-    left: 38%;
+    top: 36px;
+    left: 36px;
   }
 
   .experience-photo-4 {
-    left: 56%;
+    top: 54px;
+    left: 54px;
   }
 
   /* PROJECTS */
