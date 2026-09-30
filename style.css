@@ -1312,3 +1312,147 @@ p {
     margin-top: 5px;
   }
 }
+
+
+/* =========================================
+   SKILLS - PROFESSIONAL GROUPING
+========================================= */
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  padding-bottom: 28px;
+  /* keeps last row clear of the page number */
+}
+
+.skills-group {
+  border-top: 1px solid rgba(156, 126, 57, .35);
+  padding-top: 7px;
+}
+
+.skills-group:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.skills-group-title {
+  font-family: var(--serif);
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--burgundy);
+  margin: 0 0 7px;
+}
+
+.skills-group .skills-grid {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .skills-section {
+    gap: 8px;
+  }
+
+  .skills-group {
+    padding-top: 5px;
+  }
+
+  .skills-group-title {
+    font-size: .82rem;
+    margin-bottom: 5px;
+  }
+
+  .skills-group .skill-card {
+    padding: 7px 8px;
+  }
+
+  .skills-group .skill-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .skills-group .skill-name {
+    font-size: .75rem;
+  }
+}
+
+/* =========================================
+   PAGE SCROLLBAR (right edge, all chapters)
+   Skills now scrolls with the page, same as Education
+========================================= */
+
+.page {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) transparent;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+.page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.page::-webkit-scrollbar-track {
+  background: rgba(90, 60, 20, .06);
+  border-left: 1px solid rgba(156, 126, 57, .25);
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  border-radius: 8px;
+  border: 2px solid var(--paper-2);
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+}
+
+/* Skill cards: subtle lift so the list feels interactive */
+
+.skill-card {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  background: rgba(200, 162, 77, .16);
+  border-color: var(--gold);
+  box-shadow: 0 4px 10px rgba(58, 42, 26, .15);
+}
+
+/* Group titles get a small gold marker for easier scanning */
+
+.skills-group-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-group-title::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    scroll-behavior: auto;
+  }
+
+  .skill-card {
+    transition: none;
+  }
+
+  .skill-card:hover {
+    transform: none;
+  }
+}
